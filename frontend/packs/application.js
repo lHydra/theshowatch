@@ -15,6 +15,4 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import "./application.css";
-
-document.body.insertAdjacentHTML("afterbegin", "Webpacker works!");
+import "init";
