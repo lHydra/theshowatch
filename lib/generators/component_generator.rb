@@ -6,13 +6,15 @@ class ComponentGenerator < Rails::Generators::Base
   end
 
   def create_css_file
-    create_file "#{component_path}/#{component_name}.css"
+    create_file "#{component_path}/#{component_name}.css" do
+      "/* #{component_path}/#{component_name}.js */"
+    end
   end
 
   def create_js_file
     create_file "#{component_path}/#{component_name}.js" do
       # require component's CSS inside JS automatically
-      "import \"./#{component_name}.css\";\n"
+      "// #{component_path}/#{component_name}.js \n\n import \"./#{component_name}.css\";\n"
     end
   end
 
