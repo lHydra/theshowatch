@@ -15,5 +15,11 @@ movies = Movie.create([
   {
     title: 'Во все тяжкие',
     kind: :serial,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic veritatis ipsam molestiae totam, odit provident delectus voluptatem voluptatum in dolorem velit ipsum neque natus, repellendus dolores sed fugit officiis, temporibus distinctio libero. Minima impedit magnam accusamus eveniet cum aspernatur libero mollitia consequatur. Saepe itaque delectus odit ut ea praesentium dicta, non, alias quis ullam fuga quasi eligendi earum fugit. Consequuntur nemo ducimus impedit ex atque.'}
-  ])
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic veritatis ipsam molestiae totam, odit provident delectus voluptatem voluptatum in dolorem velit ipsum neque natus, repellendus dolores sed fugit officiis, temporibus distinctio libero. Minima impedit magnam accusamus eveniet cum aspernatur libero mollitia consequatur. Saepe itaque delectus odit ut ea praesentium dicta, non, alias quis ullam fuga quasi eligendi earum fugit. Consequuntur nemo ducimus impedit ex atque.'
+  },
+  {
+    title: 'Lost',
+    kind: :serial,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quam ducimus optio qui aut odit expedita autem deserunt, beatae ea facere, dicta illo, facilis eius debitis veritatis ab officiis! Assumenda quo, doloribus expedita itaque dolor placeat laboriosam minus culpa numquam excepturi veniam eveniet. Sapiente laboriosam consectetur molestias libero? Veritatis nemo, repellat architecto fugit doloremque aut.'
+  }
+])

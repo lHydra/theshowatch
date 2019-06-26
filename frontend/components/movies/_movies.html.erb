@@ -1,8 +1,5 @@
-<% movies.each do |movie| %>
-  <div class="title">
-    <%= movie.title %>
-  </div>
-  <div class="desc">
-    <%= movie.description %>
-  </div>
-<% end %>
+<div class="movie-wrapper">
+  <% movies.each do |movie| %>
+    <%= c('movie', movie: movie) %>
+  <% end %>
+</div>
