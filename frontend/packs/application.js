@@ -16,3 +16,5 @@
 // const imagePath = (name) => images(name, true)
 
 import "init";
+import "components/page/page";
+import "components/movies/movies";
