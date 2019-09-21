@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Theshowatch
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application'
+  %body
+    %nav.navbar
+      .container
+        .navbar-nav
+          = link_to 'TheShoWatch', root_path, class: "navbar-brand"
+          %a.nav-item{:href => "#"} Сериалы
+    .body
+      = yield
+    %footer.footer
+      .container
+        © 2019
+    = javascript_pack_tag 'application'

@@ -1,0 +1,8 @@
+.movie
+  - if movie.cover.present?
+    .movie--cover
+      = image_tag movie.cover.url
+  .movie--title
+    = movie.title
+  .movie--desc
+    = movie.description
