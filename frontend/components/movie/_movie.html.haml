@@ -1,8 +1,9 @@
+- cover_url = movie.cover.main.url if movie.cover.present?
+
 .movie
-  - if movie.cover.present?
-    .movie--cover
-      = image_tag movie.cover.url
-  .movie--title
-    = movie.title
-  .movie--desc
-    = movie.description
+  .movie--container{style: "background: url('#{cover_url}')"}
+    .movie--overlay
+    .movie--title
+      = movie.title
+    -# .movie--desc
+    -#   = movie.description

@@ -10,9 +10,11 @@ body {
   font-family: "Helvetica Neue", Helevtica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
   background-color: #fafafa;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 19px;
+  }
 }
 
 nav {
@@ -42,8 +44,9 @@ nav {
 }
 
 footer {
-  margin-top: 60px;
+  bottom: 0;
   padding: 10px 0;
+  margin-top: 60px;
   background-color: #f7f7f2;
 }
 
@@ -52,4 +55,6 @@ footer {
   max-width: 1270px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }

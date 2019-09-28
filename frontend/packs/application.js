@@ -18,3 +18,4 @@
 import "init";
 import "components/page/page";
 import "components/movies/movies";
+import "components/movie/movie";
