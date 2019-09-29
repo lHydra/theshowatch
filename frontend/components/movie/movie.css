@@ -8,6 +8,10 @@
   cursor: pointer;
   overflow: hidden;
 
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+
   &--overlay {
     background-color: rgba(0, 0, 0, 0.4);
     height: 100%;
@@ -24,9 +28,27 @@
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       transition: all 0.3s ease-in-out;
     }
+  }
+
+  &--season,
+  &--release-date {
+    position: absolute;
+    bottom: 20px;
+    background-color: #34495e;
+    padding: 7px;
+    border-radius: 25px;
+    color: white;
+  }
+
+  &--season {
+    left: 25px;
+  }
+
+  &--release-date {
+    right: 25px;
   }
 
   &--title {

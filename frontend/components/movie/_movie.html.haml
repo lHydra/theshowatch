@@ -3,7 +3,11 @@
 .movie
   .movie--container{style: "background: url('#{cover_url}')"}
     .movie--overlay
-    .movie--title
-      = movie.title
+      = link_to movie.title, movie, class: 'movie--title'
+      .movie--season
+        Сезон 4
+      .movie--release-date
+        Выйдет в 2020
+
     -# .movie--desc
     -#   = movie.description
