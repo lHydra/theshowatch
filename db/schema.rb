@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_22_115012) do
+ActiveRecord::Schema.define(version: 2019_09_29_171011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 2019_08_22_115012) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "cover"
+    t.datetime "release_date"
+    t.integer "status"
+    t.datetime "premiere_date"
+    t.string "production"
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.datetime "release_date"
+    t.index ["movie_id"], name: "index_seasons_on_movie_id"
+  end
+
+  create_table "series", force: :cascade do |t|
+    t.bigint "season_id"
+    t.datetime "release_date"
+    t.index ["season_id"], name: "index_series_on_season_id"
   end
 
 end
