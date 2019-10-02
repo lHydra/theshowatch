@@ -5,9 +5,6 @@
     .movie--overlay
       = link_to movie.title, movie, class: 'movie--title'
       .movie--season
-        Сезон 4
+        = t('counts.season', count: movie.seasons.count)
       .movie--release-date
-        Выйдет в 2020
-
-    -# .movie--desc
-    -#   = movie.description
+        = release_status(movie)

@@ -19,6 +19,7 @@ class Movie < ApplicationRecord
   has_many :seasons
 
   enum kind: [:serial, :film]
+  enum status: [:released, :expected, :coming_out]
   
   mount_uploader :cover, CoverUploader
 end

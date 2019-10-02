@@ -1,0 +1,13 @@
+ru:
+  active_record:
+    models:
+      movie:
+        released_date:
+          released: Вышел
+          no_information: Нет информации
+  counts:
+    season:
+      zero: 'Сезонов нет'
+      one: '1 сезон'
+      few: '%{count} сезона'
+      many: '%{count} сезонов'
