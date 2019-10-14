@@ -2,8 +2,8 @@
 
 .movie
   .movie--container{style: "background: url('#{cover_url}')"}
-    .movie--overlay
-      = link_to movie.title, movie, class: 'movie--title'
+    = link_to movie, class: 'movie--overlay' do
+      .movie--title= movie.title
       .movie--season
         = t('counts.season', count: movie.seasons.count)
       .movie--release-date
