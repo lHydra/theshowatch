@@ -8,6 +8,7 @@ body {
 
 a {
   text-decoration: none;
+  outline: 0;
 }
 
 body {
@@ -44,6 +45,10 @@ nav {
     display: block;
     color: white;
     text-decoration: none;
+
+    &:active {
+      background-color: #3a536c;
+    }
   }
 }
 
