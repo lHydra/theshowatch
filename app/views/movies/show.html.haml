@@ -1,2 +1,1 @@
-= c('page') do
-  = c('movie', movie: @movie)
+= react_component('independent_movie/IndependentMovie', { movie: @movie }, { prerender: true })

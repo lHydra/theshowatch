@@ -9,3 +9,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+h1 {
+  color: red;
+}

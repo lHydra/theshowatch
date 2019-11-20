@@ -5,6 +5,15 @@ ru:
         released_date:
           released: Вышел
           no_information: Нет информации
+  activerecord:
+    errors:
+      models:
+        movie:
+          attributes:
+            title:
+              blank: Название не может быть пустым!
+            description:
+              blank: Описание не может быть пустым!
   counts:
     season:
       zero: 'Сезонов нет'

@@ -16,6 +16,14 @@
 // const imagePath = (name) => images(name, true)
 
 import "init";
-import "components/page/page";
-import "components/movies/movies";
-import "components/movie/movie";
+// import "components/page/page";
+// import "components/movies/Movies";
+// import "components/movie/movie";
+// Support component names relative to this directory:
+import Moment from "react-moment";
+
+Moment.globalLocale = "ru";
+
+const componentRequireContext = require.context("components", true);
+const ReactRailsUJS = require("react_ujs");
+ReactRailsUJS.useContext(componentRequireContext);
