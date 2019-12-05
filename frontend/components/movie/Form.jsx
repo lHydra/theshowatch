@@ -1,10 +1,11 @@
 import React from "react";
 import Page from "../page/Page";
+import TextFieldGroup from "../form/TextFieldGroup";
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { movie: { title: props.movie.title, description: props.movie.description } };
+    this.state = { movie: { title: props.movie.title, description: props.movie.description }, errors: {} };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
@@ -38,52 +39,49 @@ class Form extends React.Component {
         }
       })
       .then(result => {
-        console.log(result);
+        this.setState({ errors: result });
       });
   }
 
   render() {
-    return(
+    return (
       <Page>
         <form id="movie-form" onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="movie_title">Название</label>
-            <input
-              id="movie_title"
-              type="text"
-              name="movie[title]"
-              value={this.state.movie.title}
-              onChange={this.handleTitleChange}
-            />
-          </div>
+          <TextFieldGroup
+            tag="input"
+            id="movie_title"
+            onChange={this.handleTitleChange}
+            value={this.state.movie.title}
+            field="movie[title]"
+            type="text"
+            error={this.state.errors.title}
+            label="Название"
+          />
 
-          <div>
-            <label htmlFor="movie_description">Описание</label>
-            <textarea
-              id="movie_description"
-              type="text"
-              name="movie[description]"
-              value={this.state.movie.description}
-              onChange={this.handleDescriptionChange}
-            />
-          </div>
+          <TextFieldGroup
+            tag="textarea"
+            id="movie_description"
+            onChange={this.handleDescriptionChange}
+            value={this.state.movie.description}
+            field="movie[description]"
+            type="text"
+            error={this.state.errors.description}
+            label="Описание"
+          />
 
-          <div>
-            <label htmlFor="movie_description">Обложка</label>
-            <input
-              id="movie_cover"
-              type="file"
-              name="movie[cover]"
-              ref={this.fileInput}
-            />
-          </div>
+          <TextFieldGroup
+            tag="input"
+            id="movie_cover"
+            field="movie[cover]"
+            type="file"
+            label="Обложка"
+            ref={this.fileInput}
+          />
 
-          <div>
-            <button type="submit">Сохранить</button>
-          </div>
+          <button type="submit" className="btn btn--success">Сохранить</button>
         </form>
       </Page>
-    )
+    );
   }
 }
 

@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to @movie, notice: 'Movie was successfully created', status: :see_other
     else
-      redirect_to movies_path, alert: @movie.errors.full_messages, status: :see_other
+      redirect_to movies_path, alert: @movie.errors.full_messages.each { |_, v|}, status: :see_other
     end
   end
 
@@ -34,7 +34,7 @@ class MoviesController < ApplicationController
       if @movie.update(movie_params)
         f.html { redirect_to @movie, notice: 'Movie was successfully updated', status: :see_other }
       else
-        f.json { render json: { errors: @movie.errors } }
+        f.json { render json: @movie.errors }
       end
     end
   end

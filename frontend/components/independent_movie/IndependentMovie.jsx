@@ -1,6 +1,6 @@
 // frontend/components/independent_movie/IndependentMovie.js
 
-import "./independent_movie.css";
+import "./independent_movie";
 import React from "react";
 import Page from "../page/Page";
 
@@ -10,6 +10,7 @@ class IndependentMovie extends React.Component {
     return (
       <Page>
         <h1> {movie.title} </h1>
+        <img src={movie.cover.main.url}></img>
       </Page>
     )
   }
