@@ -17,16 +17,16 @@ class Movie extends React.Component {
   }
 
   render() {
-    const movie = this.props.movie;
+    const { cover, title, seasonsCount, status, permalink } = this.props.movie;
 
     return (
       <div className="movie">
-        <div className="movie--container" style={{ background: "url(" + movie.cover.main.url + ")" }}>
-          <a href={movie.permalink} className="movie--overlay">
-            <div className="movie--title"> {movie.title} </div>
-            <div className="movie--season"> {movie.seasons_count} </div>
+        <div className="movie--container" style={{ background: `url(${cover.main.url})` }}>
+          <a href={permalink} className="movie--overlay">
+            <div className="movie--title"> {title} </div>
+            <div className="movie--season"> {seasonsCount} </div>
             <div className="movie--release-date">
-              {this.releaseStatus(movie.status)}
+              {this.releaseStatus(status)}
             </div>
           </a>
         </div>
