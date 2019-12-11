@@ -1,1 +1,19 @@
 /* frontend/components/independent_movie/independent_movie.js */
+
+.flex-container
+  display: flex
+
+.left-side
+  flex: 30%
+
+.right-side
+  flex: 70%
+
+.independent-movie
+  &--cover
+    width: 350px
+    height: 405px
+  &--field
+    padding: 10px 0
+    + .independent-movie--field
+      border-top: 1px solid #c4cad0

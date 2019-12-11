@@ -9,8 +9,22 @@ class IndependentMovie extends React.Component {
     const movie = this.props.movie;
     return (
       <Page>
-        <h1> {movie.title} </h1>
-        <img src={movie.cover.main.url}></img>
+        <div className="independent-movie flex-container">
+          <div className="left-side">
+            <img src={movie.cover.main.url} className="independent-movie--cover" />
+          </div>
+
+          <div className="right-side">
+            <h1> {movie.title} </h1>
+            {
+              Object.values(movie).map(function(prop, i) {
+                if (typeof(prop) != "object") {
+                  return <div className="independent-movie--field" key={i}> {prop} </div>
+                }
+              })
+            }
+          </div>
+        </div>
       </Page>
     )
   }
