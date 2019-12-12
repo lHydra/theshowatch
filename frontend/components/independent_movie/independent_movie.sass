@@ -9,11 +9,21 @@
 .right-side
   flex: 70%
 
+.float-label
+  margin-bottom: 0
+  font-size: 12px
+  color: #A6A6A6
+  line-height: 1.5
+
 .independent-movie
   &--cover
     width: 350px
     height: 405px
+  &--title
+    margin-top: 0
   &--field
+    display: flex
+    flex-direction: column
     padding: 10px 0
     + .independent-movie--field
       border-top: 1px solid #c4cad0
