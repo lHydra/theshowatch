@@ -36,6 +36,12 @@ class Movie < ApplicationRecord
   end
 
 
+  def fields
+    except_attributes = %w(id title cover created_at updated_at)
+    attributes.select { |attr| self.send(attr).present? && except_attributes.exclude?(attr) }
+  end
+
+
   private
 
 

@@ -1,1 +1,1 @@
-= react_component('independent_movie/IndependentMovie', { title: @movie.title, fields: @movie.attributes.except('title', 'cover', 'created_at', 'updated_at', 'id'), cover: @movie.cover }, { prerender: true })
+= react_component('independent_movie/IndependentMovie', { title: @movie.title, fields: @movie.fields, cover: @movie.cover }, { prerender: true })

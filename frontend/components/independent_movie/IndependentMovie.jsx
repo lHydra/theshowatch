@@ -3,6 +3,7 @@
 import "./independent_movie";
 import React from "react";
 import Page from "../page/Page";
+import I18n from "i18n-js";
 
 class IndependentMovie extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class IndependentMovie extends React.Component {
         <div className="independent-movie flex-container">
           <div className="left-side">
             <img
-              src={this.props.cover.main.url}
+              src={this.props.cover.card.url}
               className="independent-movie--cover"
             />
           </div>
@@ -22,7 +23,7 @@ class IndependentMovie extends React.Component {
             {Object.entries(fields).map(([key, value]) => {
               return (
                 <div className="independent-movie--field" key={key}>
-                  <label className="float-label"> {key} </label>
+                  <label className="float-label"> {I18n.t(`activerecord.attributes.movie.${key}`)} </label>
                   <span> {value} </span>
                 </div>
               );

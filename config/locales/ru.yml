@@ -6,6 +6,15 @@ ru:
           released: Вышел
           no_information: Нет информации
   activerecord:
+    attributes:
+      movie:
+        title: Название
+        description: Описание
+        kind: Тип
+        premiere_date: Премьера
+        release_date: Релиз
+        status: Статус
+        production: Производство
     errors:
       models:
         movie:
