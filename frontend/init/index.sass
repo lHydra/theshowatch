@@ -1,0 +1,92 @@
+@import "normalize.css/normalize.css"
+
+// color scheme: alert: #a50104, green: #9fd356, form_border: #c4cad0, main_background: #fafafa, header: #34495e, footer: #f7f7f2
+
+html,
+body
+  height: 100%
+  width: 100%
+
+a
+  text-decoration: none
+  outline: 0
+
+body
+  font-family: "Helvetica Neue", Helevtica, Arial, sans-serif
+  font-size: 16px
+  line-height: 24px
+  background-color: #fafafa
+  display: flex
+  flex-direction: column
+
+  @media only screen and (max-width: 768px)
+    font-size: 19px
+
+nav
+  background-color: #34495e
+  display: grid
+
+  .navbar-nav
+    display: inline-grid
+    grid-template-columns: auto auto
+    grid-column-gap: 70px
+    align-items: center
+
+  .navbar-brand
+    display: inline-block
+    font-size: 24px
+    color: white
+    text-decoration: none
+    padding: 20px 10px 20px 0
+
+  .nav-item
+    display: block
+    color: white
+    text-decoration: none
+
+    &:active
+      background-color: #3a536c
+
+.main-content-wrapper
+  flex: 1
+
+footer
+  padding: 10px 0
+  margin-top: 30px
+  background-color: #f7f7f2
+
+.container
+  display: block
+  max-width: 1270px
+  width: 100%
+  margin: 0 auto
+  padding: 0 20px
+  box-sizing: border-box
+
+/* form styles */
+
+input[type="text"], textarea
+  border: 1px solid #c4cad0
+  border-radius: 5px
+  padding: 6px
+
+.form-group
+  display: flex
+  flex-direction: column
+  margin-bottom: 10px
+
+label
+  margin-bottom: 5px
+
+.btn
+  cursor: pointer
+  padding: 10px
+  border: 0
+  border-radius: 5px
+
+  &--success
+    background-color: #9fd356
+
+.help-block
+  font-size: 14px
+  color: #a50104

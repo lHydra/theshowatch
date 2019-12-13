@@ -1,31 +1,51 @@
 class MoviesController < ApplicationController
+  before_action :set_movie, only: %I(show edit update destroy)
+
+
   def index
     @movies = Movie.all
   end
 
 
-  def show
-    @movie = Movie.find(params[:id])
+  def show; end
+
+
+  def new
+    @movie = Movie.new
   end
 
 
-  def edit
-    @movie = Movie.find(params[:id])
+  def create
+    @movie = Movie.new(movie_params)
+
+    if @movie.save
+      redirect_to @movie, notice: 'Movie was successfully created', status: :see_other
+    else
+      redirect_to movies_path, alert: @movie.errors.full_messages.each { |_, v|}, status: :see_other
+    end
   end
+
+
+  def edit; end
 
 
   def update
-    @movie = Movie.find(params[:id])
-
-    if @movie.update(movie_params)
-      redirect_to @movie, notice: 'Movie was successfully updated'
-    else
-      redirect_to movies_path, alert: @movie.errors.full_messages
+    respond_to do |f|
+      if @movie.update(movie_params)
+        f.html { redirect_to @movie, notice: 'Movie was successfully updated', status: :see_other }
+      else
+        f.json { render json: @movie.errors }
+      end
     end
   end
 
 
   private
+
+
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
 
 
   def movie_params

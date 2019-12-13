@@ -5,8 +5,8 @@ class ComponentGenerator < Rails::Generators::Base
     create_file "#{component_path}/_#{component_name}.html.erb"
   end
 
-  def create_css_file
-    create_file "#{component_path}/#{component_name}.css" do
+  def create_sass_file
+    create_file "#{component_path}/#{component_name}.sass" do
       "/* #{component_path}/#{component_name}.js */"
     end
   end
@@ -14,7 +14,7 @@ class ComponentGenerator < Rails::Generators::Base
   def create_js_file
     create_file "#{component_path}/#{component_name}.js" do
       # require component's CSS inside JS automatically
-      "// #{component_path}/#{component_name}.js \n\n import \"./#{component_name}.css\";\n"
+      "// #{component_path}/#{component_name}.js \n\n import \"./#{component_name}.sass\";\n"
     end
   end
 

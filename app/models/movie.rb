@@ -20,6 +20,32 @@ class Movie < ApplicationRecord
 
   enum kind: [:serial, :film]
   enum status: [:released, :expected, :coming_out]
-  
+
   mount_uploader :cover, CoverUploader
+
+  validates :title, :description, presence: true
+
+
+  def permalink
+    routes.movie_path(self)
+  end
+
+
+  def seasons_count
+    I18n.t('counts.season', count: seasons.count)
+  end
+
+
+  def fields
+    except_attributes = %w(id title cover created_at updated_at)
+    attributes.select { |attr| self.send(attr).present? && except_attributes.exclude?(attr) }
+  end
+
+
+  private
+
+
+  def routes
+    Rails.application.routes.url_helpers
+  end
 end

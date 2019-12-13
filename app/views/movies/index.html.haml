@@ -1,2 +1,3 @@
-= c('page') do
-  = c('movies', movies: @movies)
+- movies_json = @movies.as_json(methods: [:permalink, :seasons_count]).each { |hash| hash.deep_transform_keys! { |key| key.camelize(:lower) } }
+
+= react_component("movies/Movies", { movies: movies_json }, { prerender: true })
