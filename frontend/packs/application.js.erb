@@ -1,0 +1,10 @@
+import "init";
+import Moment from "react-moment";
+import I18n from "i18n-js";
+
+I18n.translations = <%= I18n::JS.translations.to_json %>;
+Moment.globalLocale = "ru";
+
+const componentRequireContext = require.context("components", true);
+const ReactRailsUJS = require("react_ujs");
+ReactRailsUJS.useContext(componentRequireContext);
