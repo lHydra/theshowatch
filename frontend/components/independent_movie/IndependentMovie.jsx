@@ -1,5 +1,3 @@
-// frontend/components/independent_movie/IndependentMovie.js
-
 import "./independent_movie";
 import React from "react";
 import Page from "../page/Page";
@@ -8,18 +6,22 @@ import I18n from "i18n-js";
 class IndependentMovie extends React.Component {
   render() {
     const fields = this.props.fields;
+    const cover = this.props.cover.card.url;
+    const title = this.props.title;
     return (
       <Page>
         <div className="independent-movie flex-container">
           <div className="left-side">
-            <img
-              src={this.props.cover.card.url}
-              className="independent-movie--cover"
-            />
+            {cover !== null &&
+              <img
+                src={cover}
+                className="independent-movie--cover"
+              />
+            }
           </div>
 
           <div className="right-side">
-            <h1 className="independent-movie--title"> {this.props.title} </h1>
+            <h1 className="independent-movie--title"> {title} </h1>
             {Object.entries(fields).map(([key, value]) => {
               return (
                 <div className="independent-movie--field" key={key}>
