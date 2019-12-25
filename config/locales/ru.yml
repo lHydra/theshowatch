@@ -11,9 +11,16 @@ ru:
         title: Название
         description: Описание
         kind: Тип
+        kinds:
+          serial: Сериал
+          film: Фильм
         premiere_date: Премьера
         release_date: Релиз
         status: Статус
+        statuses:
+          released: Вышел
+          expected: Ожидается
+          coming_out: Выходит
         production: Производство
     errors:
       models:
