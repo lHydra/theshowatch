@@ -40,7 +40,7 @@ export function MovieField(props) {
         return I18n.t(`activerecord.attributes.movie.kinds.${props.value}`);
       case "release_date":
       case "premiere_date":
-        return <Moment format="DD MMM YY">{props.value}</Moment>;
+        return <Moment format="LL">{props.value}</Moment>;
       default:
         return props.value;
     }
