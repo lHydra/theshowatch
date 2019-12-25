@@ -22,6 +22,7 @@ ru:
           expected: Ожидается
           coming_out: Выходит
         production: Производство
+        seasons_count: Количество сезонов
     errors:
       models:
         movie:

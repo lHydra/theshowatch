@@ -19,11 +19,14 @@ class IndependentMovie extends React.Component {
 
           <div className="right-side">
             <h1 className="independent-movie--title"> {title} </h1>
-            {Object.entries(fields).map(([key, value]) => (
-              <div className="independent-movie--field" key={key}>
-                <MovieField field={key} value={value} />
-              </div>
-            ))}
+            {Object.entries(fields).map(
+              ([key, value]) =>
+                value !== null && (
+                  <div className="independent-movie--field" key={key}>
+                    <MovieField field={key} value={value} />
+                  </div>
+                )
+            )}
           </div>
         </div>
       </Page>
