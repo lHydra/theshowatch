@@ -19,11 +19,18 @@
   &--cover
     width: 350px
     height: 405px
-  &--title
-    margin-top: 0
   &--field
     display: flex
     flex-direction: column
     padding: 10px 0
     + .independent-movie--field
       border-top: 1px solid #c4cad0
+    &:last-child
+      border-bottom: 1px solid #c4cad0
+  /* mobile */
+  @media only screen and (max-width: 900px)
+    flex-direction: column
+  /* desktop */
+  @media only screen and (min-width: 901px)
+    &--title
+      margin-top: 0

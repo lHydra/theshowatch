@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Page from "../page/Page";
-import Movie from "../movie/Movie"
-import './movies';
+import Movie from "../movie/Movie";
+import "./movies";
 
 class Movies extends React.Component {
   render() {
@@ -11,7 +11,9 @@ class Movies extends React.Component {
     return (
       <Page>
         <div className="movies">
-          {movies.map((movie, index) => <Movie movie={movie} key={index} />)}
+          {movies.map(movie => (
+            <Movie movie={movie} key={movie.id} />
+          ))}
         </div>
       </Page>
     );

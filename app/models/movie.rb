@@ -37,8 +37,8 @@ class Movie < ApplicationRecord
 
 
   def fields
-    except_attributes = %w(id title cover created_at updated_at)
-    attributes.select { |attr| self.send(attr).present? && except_attributes.exclude?(attr) }
+    except_attributes = %w(id title cover status created_at updated_at)
+    as_json(except: except_attributes, methods: :seasons_count)
   end
 
 
