@@ -13,7 +13,8 @@
       .container
         .navbar-nav
           = link_to 'TheShoWatch', root_path, class: "navbar-brand"
-          %a.nav-item{:href => "#"} Сериалы
+          = link_to 'Сериалы', '#', class: 'nav-item'
+          = link_to 'Войти', '#', class: 'nav-item'
     .main-content-wrapper
       = yield
     %footer.footer

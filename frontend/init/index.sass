@@ -27,10 +27,12 @@ nav
   display: grid
 
   .navbar-nav
-    display: inline-grid
-    grid-template-columns: auto auto
-    grid-column-gap: 70px
+    display: grid
+    grid-template-columns: 200px 200px 1fr
+    width: 100%
     align-items: center
+    .nav-item:last-child
+      margin-left: auto
 
   .navbar-brand
     display: inline-block
