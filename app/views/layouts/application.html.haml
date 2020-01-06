@@ -14,7 +14,12 @@
         .navbar-nav
           = link_to 'TheShoWatch', root_path, class: "navbar-brand"
           = link_to 'Сериалы', '#', class: 'nav-item'
-          = link_to 'Войти', '#', class: 'nav-item'
+          .navbar-nav--right
+            - if current_user
+              %span.nav-item= current_user.email
+            - else
+              = link_to 'Войти', login_path, class: 'nav-item'
+              = link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-item'
     .main-content-wrapper
       = yield
     %footer.footer

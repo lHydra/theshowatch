@@ -31,8 +31,12 @@ nav
     grid-template-columns: 200px 200px 1fr
     width: 100%
     align-items: center
-    .nav-item:last-child
-      margin-left: auto
+    &--right
+      display: grid
+      grid-template-columns: repeat(2, auto)
+      justify-items: end
+      justify-self: end
+      grid-column-gap: 20px
 
   .navbar-brand
     display: inline-block
@@ -92,3 +96,9 @@ label
 .help-block
   font-size: 14px
   color: #a50104
+
+.boolean.checkbox
+  display: inline-grid
+  grid-template-columns: repeat(2, auto)
+  align-items: center
+  grid-column-gap: 7px

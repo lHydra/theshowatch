@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'users/check_for_user', to: 'users/sessions#check_for_user'
+    get 'login', to: 'devise/sessions#new'
+    delete 'logout', to: 'devise/sessions#destroy'
   end
 end

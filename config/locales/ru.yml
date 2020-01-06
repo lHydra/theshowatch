@@ -25,6 +25,12 @@ ru:
         seasons_count: Количество сезонов
     errors:
       models:
+        user:
+          attributes:
+            email:
+              blank: Почта не может быть пустой!
+            password:
+              blank: Пароль не может быть пустым!
         movie:
           attributes:
             title:
