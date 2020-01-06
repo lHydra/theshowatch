@@ -17,6 +17,7 @@
           .navbar-nav--right
             - if current_user
               %span.nav-item= current_user.email
+              = link_to 'Выйти', logout_path, method: :delete, class: 'nav-item'
             - else
               = link_to 'Войти', login_path, class: 'nav-item'
               = link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-item'
