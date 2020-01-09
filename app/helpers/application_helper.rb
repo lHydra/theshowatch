@@ -5,4 +5,8 @@ module ApplicationHelper
   end
 
   alias c component
+
+  def mobile_device?
+    request.user_agent =~ /Mobile|webOS|iPad|Android/
+  end
 end

@@ -1,7 +1,10 @@
-require("@rails/ujs").start();
 import "init";
 import Moment from "react-moment";
 import I18n from "i18n-js";
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/js/all.js";
+
+require("@rails/ujs").start();
 
 I18n.translations = <%= I18n::JS.translations.to_json %>;
 I18n.defaultLocale = "<%= I18n.locale %>";
