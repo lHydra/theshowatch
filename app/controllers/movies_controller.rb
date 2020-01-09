@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
 
 
   def index
-    @movies = Movie.all
+    @movies = Movie.order_by_release_date
   end
 
 

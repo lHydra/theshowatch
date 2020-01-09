@@ -19,12 +19,13 @@ class Movie < ApplicationRecord
   has_many :seasons
 
   enum kind: [:serial, :film]
-  enum status: [:released, :expected, :coming_out]
+  enum status: { released: 1, expected: 3, coming_out: 2 }
 
   mount_uploader :cover, CoverUploader
 
   validates :title, :description, presence: true
 
+  scope :order_by_release_date, -> { order(:status, :release_date) }
 
   def permalink
     routes.movie_path(self)

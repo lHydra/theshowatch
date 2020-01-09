@@ -23,7 +23,7 @@ class Movie extends React.Component {
             <div className="movie--title"> {title} </div>
             <div className="movie--season"> {seasonsCount} </div>
             <div className="movie--release-date">
-              <MovieStatus status={status} release_date={releaseDate} />
+              <MovieStatus status={status} releaseDate={releaseDate} />
             </div>
           </a>
         </div>
