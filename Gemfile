@@ -14,6 +14,7 @@ gem 'carrierwave'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'i18n-js'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
