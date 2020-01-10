@@ -24,13 +24,13 @@ body
 
 nav
   background-color: #34495e
-  display: grid
 
   .navbar-nav
+    height: 50px
+    align-items: center
     display: grid
     grid-template-columns: 200px 200px 1fr
     width: 100%
-    align-items: center
     &--right
       display: grid
       grid-template-columns: repeat(2, auto)
@@ -43,7 +43,6 @@ nav
     font-size: 24px
     color: white
     text-decoration: none
-    padding: 20px 10px 20px 0
 
   .nav-item
     display: block
@@ -115,4 +114,62 @@ label
   overflow-x: hidden
   overflow-y: auto
   transition: all 0.35s ease
-  background-color: white
+  background-color: #f5f5f5
+
+#mobile-wrapper
+  display: flex
+  flex-direction: column
+  height: 100%
+  width: 100%
+  transition: all 0.35s ease
+  padding-top: 50px
+  position: relative
+  #page-content-wrapper
+    flex: 1
+  &.toggled
+    position: fixed
+    #sidebar-wrapper
+      width: 280px
+    #page-content-wrapper
+      &:after
+        content: ''
+        background-color: rgba(0,0,0,.5)
+        position: absolute
+        left: 0
+        right: 0mobile-wrapper
+        top: 0
+        bottom: 0
+        z-index: 10
+
+.sidebar-nav
+  top: 0
+  position: absolute
+  width: 280px
+  margin: 0
+  padding: 0
+  list-style: none
+  .nav-item
+    line-height: 50px
+    padding: 0 20px
+    border-bottom: 1px solid #c4cad0
+    a
+      color: #444
+
+#navbar-wrapper
+  position: fixed
+  width: 100%
+  left: 0
+  top: 0
+  z-index: 1000
+  a
+    color: white
+  .navbar-nav
+    grid-template-columns: repeat(3, auto)
+    justify-content: space-between
+  .account-menu
+    display: flex
+    justify-content: center
+    align-items: center
+    .thumb-avatar
+      height: 24px
+      width: 24px

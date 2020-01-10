@@ -14,20 +14,25 @@
         #sidebar-wrapper
           = render partial: 'shared/mobile/sidebar'
         #navbar-wrapper
-          %nav.nav#top-menu
+          %nav#top-menu
             .container
-              %i.fas.fa-bars.navbar-brand.menu-toggle
-              = link_to 'TheShoWatch', root_path, class: "navbar-brand"
-              - if current_user
-                .acc-menu.dropdown
-                  %a{href: '#', 'data-toggle': 'dropdown'}
-                    .thumb-avatar{ style: "background-image: url(#{image_path('user.svg')})" }
-                  %ul.dropdown-menu.dropdown-menu-right
-              - else
-                = link_to 'Войти', login_path
+              .navbar-nav
+                %a.navbar-brand.menu-toggle
+                  %i.fas.fa-bars
+                = link_to 'TheShoWatch', root_path, class: "navbar-brand"
+                - if current_user
+                  .account-menu.dropdown
+                    %a{href: '#', 'data-toggle': 'dropdown'}
+                      .thumb-avatar{ style: "background-image: url(#{asset_pack_path('media/images/user.svg')})" }
+                    -#%ul.dropdown-menu.dropdown-menu-right
+                - else
+                  = link_to 'Войти', login_path
         #page-content-wrapper
           .main-content-wrapper
             = yield
+        /* footer start */
+        = render partial: 'shared/footer'
+        /* footer end */
     - else
       %nav.navbar
         .container
@@ -43,6 +48,6 @@
                 = link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-item'
       .main-content-wrapper
         = yield
-    %footer.footer
-      .container
-        © 2019
+      /* footer start */
+      = render partial: 'shared/footer'
+      /* footer end */

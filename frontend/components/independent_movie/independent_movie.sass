@@ -17,8 +17,10 @@
 
 .independent-movie
   &--cover
-    width: 350px
-    height: 405px
+    max-width: 100%
+    @media only screen and (min-width: 769px)
+      width: 350px
+      height: 405px
   &--field
     display: flex
     flex-direction: column
