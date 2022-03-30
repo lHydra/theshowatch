@@ -5,7 +5,7 @@ ruby '2.6.0'
 
 gem 'rails', '~> 6.0.0.rc1'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
